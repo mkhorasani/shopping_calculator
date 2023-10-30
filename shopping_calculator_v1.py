@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import openpyxl
 
 st.title('ماشین حساب خرید')
 st.write('___')
