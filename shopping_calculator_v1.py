@@ -19,9 +19,10 @@ if file is not None:
         for i in range(0,len(selection)):
             final_df.loc[i,'نوع کالا'] = selection[i]
             final_df.loc[i,'تعداد'] = 1
-            final_df.loc[i,'قیمت'] = df[df['نوع کالا']==products_list[i]]['قیمت'].iloc[0]
+            final_df.loc[i,'قیمت'] = df[df['نوع کالا']==selection[i]]['قیمت'].iloc[0]
         edited_df = st.data_editor(final_df,disabled=('نوع کالا', 'قیمت'))
         if edited_df is not None:
+            final_df['تعداد'] = edited_df['تعداد']
             final_df['قیمت جمع'] = edited_df['تعداد']*final_df['قیمت']
         st.write('___')
         st.subheader('جدول نهایی')
