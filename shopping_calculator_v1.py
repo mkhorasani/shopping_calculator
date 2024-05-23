@@ -7,7 +7,7 @@ st.subheader('آپلود فایل')
 file = st.file_uploader('لطفا فایل را آپلود کنید')
 
 if file is not None:
-    df = pd.read_excel(file)
+    df = pd.read_excel(file, sheet_name='Sheet1')
     products_list = df['نوع کالا'].tolist()
     st.write('___')
     st.subheader('انتخاب محصولات')
